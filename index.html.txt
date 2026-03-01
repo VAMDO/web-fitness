@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil Fitness</title>
+    <style>
+        /* Estilo Minimalista Oscuro */
+        body {
+            background-color: #000000;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 15px;
+            background-color: #0a0a0a;
+            width: 300px;
+        }
+        h1 { color: #CCFF00; margin-bottom: 5px; } /* Amarillo Neón */
+        p { color: #888; margin-bottom: 25px; }
+        .boton {
+            display: block;
+            background-color: white;
+            color: black;
+            padding: 12px;
+            margin: 10px 0;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .boton:hover { background-color: #CCFF00; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tu Nombre Aquí</h1>
+        <p>Entrenador Online | Especialista en Hipertrofia</p>
+        
+        <a href="#" class="boton">Ver Planes de Entrenamiento</a>
+        <a href="#" class="boton">Asesoría por WhatsApp</a>
+        <a href="#" class="boton">Instagram</a>
+    </div>
+
+</body>
+</html>
