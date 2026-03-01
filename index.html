@@ -3,54 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Perfil Fitness</title>
+    <title>Lovelo - Acceso a Contenido Exclusivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilo Minimalista Oscuro */
+        /* Variables y Reset Básico */
+        :root {
+            --primary-color: #E50914; /* Rojo Netflix */
+            --secondary-color: #0d6efd; /* Azul de acento */
+            --dark-bg: #141414;
+            --text-light: #f5f5f5;
+            --text-gray: #aaaaaa;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #000000;
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font-secondary);
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #000;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 2.5em;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            margin-left: 20px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1594909191392-48a042e1850d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: var(--font-primary);
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-weight: 900;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #c40812; /* Un rojo más oscuro */
+        }
+
+        /* Seccion de Caracteristicas */
+        .features {
+            background-color: #000;
+            padding: 60px 0;
             text-align: center;
         }
-        .container {
-            padding: 20px;
+
+        .features h2 {
+            font-family: var(--font-primary);
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            background-color: var(--dark-bg);
+            padding: 30px;
+            border-radius: 10px;
             border: 1px solid #333;
-            border-radius: 15px;
-            background-color: #0a0a0a;
-            width: 300px;
+            transition: transform 0.3s;
         }
-        h1 { color: #CCFF00; margin-bottom: 5px; } /* Amarillo Neón */
-        p { color: #888; margin-bottom: 25px; }
-        .boton {
-            display: block;
-            background-color: white;
-            color: black;
-            padding: 12px;
-            margin: 10px 0;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s;
+
+        .feature-item:hover {
+            transform: translateY(-5px);
         }
-        .boton:hover { background-color: #CCFF00; }
+
+        .feature-item i { /* Iconos */
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-family: var(--font-primary);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            color: var(--text-gray);
+        }
+
+        /* Seccion de Precios */
+        .pricing {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-family: var(--font-primary);
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--text-light);
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .plan-item {
+            background-color: #000;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .plan-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .plan-item h3 {
+            font-family: var(--font-primary);
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .plan-item .price {
+            font-family: var(--font-primary);
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .plan-item .price span {
+            font-size: 0.5em;
+            color: var(--text-gray);
+        }
+
+        .plan-item ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .plan-item ul li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #333;
+            color: var(--text-gray);
+        }
+        .plan-item ul li:last-child { border-bottom: none; }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: var(--text-gray);
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 20px;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Tu Nombre Aquí</h1>
-        <p>Entrenador Online | Especialista en Hipertrofia</p>
-        
-        <a href="#" class="boton">Ver Planes de Entrenamiento</a>
-        <a href="#" class="boton">Asesoría por WhatsApp</a>
-        <a href="#" class="boton">Instagram</a>
-    </div>
+    <header>
+        <div class="container navbar">
+            <div class="logo">LOVELO</div>
+            <nav class="nav-links">
+                <a href="#features">Características</a>
+                <a href="#pricing">Precios</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descubre un universo de entretenimiento exclusivo</h1>
+            <p>Tus historias favoritas, sin límites. Únete hoy y vive la experiencia.</p>
+            <a href="#pricing" class="btn-primary">Únete ahora</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>¿Qué Ofrecemos?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Contenido Exclusivo</h3>
+                    <p>Accede a series y películas que no encontrarás en ningún otro lugar.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Multi-Plataforma</h3>
+                    <p>Disfruta en tu TV, computadora, tablet y smartphone, donde quieras.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>En cualquier sitio</h3>
+                    <p>Viaja y sigue disfrutando de todo nuestro catálogo sin interrupciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Nuestros Planes</h2>
+            <div class="plan-grid">
+                <div class="plan-item">
+                    <h3>Básico</h3>
+                    <div class="price">$9.99<span>/mes</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acceso a catálogo limitado</li>
+                        <li><i class="fas fa-check"></i> 1 pantalla simultánea</li>
+                        <li><i class="fas fa-times"></i> Sin descargas</li>
+                        <li><i class="fas fa-times"></i> Calidad estándar</li>
+                    </ul>
+                    <a href="TU_LINK_DE_MERCADO_PAGO_PLAN_BASICO" class="btn-primary">Suscribirme</a>
+                </div>
+
+                <div class="plan-item">
+                    <h3>Premium</h3>
+                    <div class="price">$14.99<span>/mes</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acceso a catálogo completo</li>
+                        <li><i class="fas fa-check"></i> 2 pantallas simultáneas</li>
+                        <li><i class="fas fa-check"></i> Descargas disponibles</li>
+                        <li><i class="fas fa-check"></i> Calidad HD</li>
+                    </ul>
+                    <a href="TU_LINK_DE_MERCADO_PAGO_PLAN_PREMIUM" class="btn-primary">Suscribirme</a>
+                </div>
+
+                <div class="plan-item">
+                    <h3>VIP</h3>
+                    <div class="price">$19.99<span>/mes</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acceso a catálogo completo</li>
+                        <li><i class="fas fa-check"></i> 4 pantallas simultáneas</li>
+                        <li><i class="fas fa-check"></i> Descargas disponibles</li>
+                        <li><i class="fas fa-check"></i> Calidad 4K UHD</li>
+                    </ul>
+                    <a href="TU_LINK_DE_MERCADO_PAGO_PLAN_VIP" class="btn-primary">Suscribirme</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Lovelo. Todos los derechos reservados.</p>
+            <p>Diseñado por [Tu Nombre / Tu Agencia]</p>
+        </div>
+    </footer>
 
 </body>
 </html>
